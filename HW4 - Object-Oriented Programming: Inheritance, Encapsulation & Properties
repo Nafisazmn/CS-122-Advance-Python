@@ -38,7 +38,8 @@
     {
       "cell_type": "markdown",
       "source": [
-        "Your name:"
+        "Your name: Nafisa Zaman\n",
+        "\n"
       ],
       "metadata": {
         "id": "TyCzc1yafaS3"
@@ -111,31 +112,129 @@
         "id": "uDyKdWYGwCIY"
       },
       "source": [
-        "## Your code here for Problem 1.1\n"
+        "## Your code here for Problem 1.1\n",
+        "#Drink class\n",
+        "\n",
+        "class Drink:\n",
+        "  def __init__(self, name, manufacturer):\n",
+        "    self.__name = name\n",
+        "    self.__manufacturer = manufacturer\n",
+        "\n",
+        "  def getName(self):\n",
+        "    return self.__name\n",
+        "\n",
+        "  def setName(self, newName):\n",
+        "    self.__name = newName\n",
+        "\n",
+        "  def getManufacturer(self):\n",
+        "    return self.__manufacturer\n",
+        "\n",
+        "  def setManufacturer(self, newManufacturer):\n",
+        "    self.__Manufacturer = newManufacturer\n",
+        "\n",
+        "  def printInfo(self):\n",
+        "    print (self.__name)\n",
+        "    print (self.__manufacturer)\n",
+        "\n",
+        "#Inherite form Drink\n",
+        "\n",
+        "class Beer(Drink):\n",
+        "  def __init__(self, name, manufacturer, carbs):\n",
+        "    super().__init__(name, manufacturer)\n",
+        "    self.__carbs = carbs\n",
+        "\n",
+        "  def getCarbs(self):\n",
+        "    return self.__carbs\n",
+        "\n",
+        "  def setCarbs(self, carbs):\n",
+        "    self.__carbs = carbs\n",
+        "\n",
+        "  def printInfo(self):\n",
+        "    super().printInfo()\n",
+        "    print(self.__carbs)"
       ],
-      "execution_count": null,
+      "execution_count": 8,
       "outputs": []
     },
     {
       "cell_type": "code",
       "source": [
-        "## Your code here for Problem 1.2\n"
+        "## Your code here for Problem 1.2\n",
+        "beer = Beer(\"Kalamazoo Stout\", \"Bell's Brewery\", 11)\n",
+        "beer.printInfo()"
       ],
       "metadata": {
-        "id": "0wcnnRFpTVRj"
+        "id": "0wcnnRFpTVRj",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "79fb2d27-6258-4bb7-cafd-11ebee5a49ea"
       },
-      "execution_count": null,
-      "outputs": []
+      "execution_count": 9,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Kalamazoo Stout\n",
+            "Bell's Brewery\n",
+            "11\n"
+          ]
+        }
+      ]
     },
     {
       "cell_type": "code",
       "source": [
-        "## Your code here for Problem 1.3\n"
+        "## Your code here for Problem 1.3\n",
+        "\n",
+        "class Drink:\n",
+        "  def __init__(self, name, manufacturer):\n",
+        "    self.__name = name\n",
+        "    self.__manufacturer = manufacturer\n",
+        "\n",
+        "  @property\n",
+        "  def name(self):\n",
+        "    return self.__name\n",
+        "\n",
+        "  @name.setter\n",
+        "  def name(self, newName):\n",
+        "    self.__name = newName\n",
+        "\n",
+        "  @property\n",
+        "  def manufacturer(self):\n",
+        "    return self.__manufacturer\n",
+        "\n",
+        "  @manufacturer.setter\n",
+        "  def manufacturer(self, newManufacturer):\n",
+        "    self.__manufacturer = newManufacturer\n",
+        "\n",
+        "  def printInfo(self):\n",
+        "    print(self.name)\n",
+        "    print(self.manufacturer)\n",
+        "\n",
+        "class Beer(Drink):\n",
+        "  def __init__(self, name, manufacturer, carbs):\n",
+        "    super().__init__(name, manufacturer)\n",
+        "    self.__carbs = carbs\n",
+        "\n",
+        "  @property\n",
+        "  def carbs(self):\n",
+        "    return self.__carbs\n",
+        "\n",
+        "  @carbs.setter\n",
+        "  def carbs(self, newCarbs):\n",
+        "    self.__carbs = newCarbs\n",
+        "\n",
+        "  def printInfo(self):\n",
+        "    print(self.name)\n",
+        "    print(self.manufacturer)\n",
+        "    print(self.carbs)"
       ],
       "metadata": {
         "id": "ORvyPIBdTVF9"
       },
-      "execution_count": null,
+      "execution_count": 11,
       "outputs": []
     }
   ]
